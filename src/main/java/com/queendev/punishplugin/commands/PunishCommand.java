@@ -11,6 +11,7 @@ import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -88,6 +89,11 @@ public class PunishCommand implements CommandExecutor {
                                 String messageLine = line.replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]);
                                 Bukkit.broadcastMessage(messageLine);
                             }
+                            p.sendMessage(messageConfig.getString("Mensagens.punishSucess").replaceAll("&", "§"));
+
+                            OfflinePlayer target = Bukkit.getOfflinePlayer(args[0]);
+                            String timePunish = reason.getTime() == 0 ? "§cPERMANENTE" : reason.getTime() + " HORA(S)";
+                            target.getPlayer().kickPlayer(messageConfig.getString("Mensagens.punishKick").replaceAll("&", "§").replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]).replace("@time", timePunish));
                         }else {
                             p.sendMessage("§cVocê não tem a permissão para aplicar este tipo de punição.");
                             return false;
