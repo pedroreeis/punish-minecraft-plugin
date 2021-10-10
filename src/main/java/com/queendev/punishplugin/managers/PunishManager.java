@@ -25,4 +25,11 @@ public class PunishManager {
         return null;
     }
 
+    public PunishModel deletePunish(String player) {
+        if(this.punishs.containsKey(player.toLowerCase())) {
+            return this.punishs.remove(player.toLowerCase());
+        }
+        return null;
+    }
+
 }

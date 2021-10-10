@@ -4,6 +4,7 @@ import com.queendev.punishplugin.Punish;
 import com.queendev.punishplugin.managers.PunishManager;
 import com.queendev.punishplugin.models.PunishModel;
 import com.queendev.punishplugin.repository.Database;
+import org.bukkit.Bukkit;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -6,5 +6,4 @@ commands:
   punir:
   checkpunish:
   unpunish:
-  getpunish:
-  setpunish:
+  getreasons:

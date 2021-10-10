@@ -1,8 +1,8 @@
 Mensagens:
   noPermission: "&c Você precisa do grupo Ajudante ou superior para executar este comando!"
   punishNoProva: "&c Você precisa de uma prova válida para prosseguir com a punição."
-  punishProvaInvalid: "&c Sua prova não é válida, ela precisa começar com https://"
-  punishReasonSelect: "&eSelecione uma infração para punir o jogador: @player:"
+  punishProvaInvalid: "&c Sua prova não é válida, ela precisa começar com https:// e/ou não pode conter espaços."
+  punishReasonSelect: "&eSelecione uma infração para punir o jogador @player:"
   punishPermaBroadcast:
     - ""
     - "&c* @player foi punido permanentemente."
