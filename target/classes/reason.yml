@@ -1,0 +1,13 @@
+ReasonPunish:
+  HACK:
+    type: "BAN" # BAN - BAN_TEMP - MUTE
+    time: 0 # Tempo em horas, deixe 0 se for permanentemente
+    permission: "punir.hack" # Permissão para punir com esse motivo.
+    label: "Uso de hack" # Motivo que irá aparecer nos menus.
+    description: "Uso de hack é quando um jogador utiliza de beneficios externos para obter vantagem sob os outros."
+  ANTI_JOGO_JOGO:
+    type: "BAN_TEMP" # BAN - BAN_TEMP - MUTE
+    time: 1 # Tempo em horas, deixe 0 se for permanentemente
+    permission: "punir.antijogo" # Permissão para punir com esse motivo.
+    label: "Anti Jogo" # Motivo que irá aparecer nos menus.
+    description: "Anti Jogo é quando um jogador atrapalha ou acaba com a experiencia de jogo dos outros jogadores."
