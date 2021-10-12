@@ -5,24 +5,16 @@ Mensagens:
   punishReasonSelect: "&eSelecione uma infração para punir o jogador @player:"
   punishPermaBroadcast:
     - ""
-    - "&c* @player foi punido permanentemente."
-    - "&c* Motivo: @reason"
-    - "&c* Autor: @autor - Prova: @prova"
-    - ""
-  punishTempBroadcast:
-    - ""
-    - "&c* @player foi punido Temporariamente."
+    - "&c* @player foi punido."
     - "&c* Motivo: @reason - Tempo: @time"
     - "&c* Autor: @autor - Prova: @prova"
     - ""
-  punishMutePlayer:
+  unPunishBroadcast:
     - ""
-    - "&c* Você foi silenciado."
-    - "&c* Motivo: @reason"
-    - "&c* Autor: @autor - Prova: @prova"
+    - "&e* @player teve sua punição revogada."
+    - "&e* Motivo: @reason"
+    - "&e* Autor: @autor"
     - ""
   punishSucess: "&ePunição aplicada com sucesso."
-  punishStaffBroadcast:
-    - "&c@player foi punido."
-    - "&cMotivo: @reason"
-  punishKick: "&c&lVOCÊ FOI PUNIDO!\n\n&fAutor: @autor\n&fProva: @prova\n&fMotivo: @reason\n&fTempo: @time\n &eAchou injusto ? Abra uma revisão em suarede.com/forum/revisão."
+  unPunishSucess: "&ePunição revogada com sucesso."
+  punishKick: "&c&lVOCÊ FOI PUNIDO!\n\n&fAutor: @autor\n&fProva: @prova\n&fMotivo: @reason\n&fTempo: @time\n \n&eAchou injusto ? Abra uma revisão em suarede.com/forum/revisão."

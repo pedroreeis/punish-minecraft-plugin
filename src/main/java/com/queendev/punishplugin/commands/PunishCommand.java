@@ -23,7 +23,6 @@ import java.util.List;
 public class PunishCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if(cmd.getName().equalsIgnoreCase("punir")) {
             if(!(sender instanceof Player)) {
                 sender.sendMessage("§cVocê tentou executar este comando no console, ele está disponivel apenas para jogadores.");
                 return false;
@@ -61,11 +60,13 @@ public class PunishCommand implements CommandExecutor {
                 HashMap<String, ReasonModel> reasons = Punish.getPlugin().getReasonManager().getReasons();
                 for(ReasonModel reason : reasons.values()) {
                     String timePunish = reason.getTime() == 0 ? "§cPERMANENTE" : reason.getTime() + " HORA(S)";
-                    list.add(new ChatObject(reason.getLabel(),
-                            new HoverEvent(HoverEvent.Action.SHOW_TEXT,
-                                    new ComponentBuilder(reason.getLabel() + "\n" + "\n" + reason.getDescription() + "\n" + "\n" + "§eTipo de punição: §7" + reason.getType() + "\n" + "§eTempo da punição: §7" + timePunish).create()),
-                            new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,
-                                    "/punir " + args[0] + " " + args[1] + " " + reason.getName())));
+                    if(p.hasPermission(reason.getPermission())) {
+                        list.add(new ChatObject(reason.getLabel(),
+                                new HoverEvent(HoverEvent.Action.SHOW_TEXT,
+                                        new ComponentBuilder(reason.getLabel() + "\n" + "\n" + reason.getDescription() + "\n" + "\n" + "§eTipo de punição: §7" + reason.getType() + "\n" + "§eTempo da punição: §7" + timePunish).create()),
+                                new ClickEvent(ClickEvent.Action.SUGGEST_COMMAND,
+                                        "/punir " + args[0] + " " + args[1] + " " + reason.getName())));
+                    }
                 }
 
                 sendReasons(p, list);
@@ -84,14 +85,14 @@ public class PunishCommand implements CommandExecutor {
                         if(p.hasPermission(reason.getPermission())) {
                             PunishManager punishManager = Punish.getPlugin().getPunishManager();
                             punishManager.createPunish(args[0].toLowerCase(), p.getName(), reason.getType(), reason.getName(), args[1], reason.getTime());
+                            String timePunish = reason.getTime() == 0 ? "§cPERMANENTE" : reason.getTime() + " HORA(S)";
                             for(String line : MessageHelper.msgList("punishPermaBroadcast")) {
-                                String messageLine = line.replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]);
+                                String messageLine = line.replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]).replace("@time", timePunish);
                                 Bukkit.broadcastMessage(messageLine);
                             }
                             p.sendMessage(messageConfig.getString("Mensagens.punishSucess").replaceAll("&", "§"));
 
                             Player target = Bukkit.getOfflinePlayer(args[0]).getPlayer();
-                            String timePunish = reason.getTime() == 0 ? "§cPERMANENTE" : reason.getTime() + " HORA(S)";
                             if(target != null) {
                                 target.kickPlayer(messageConfig.getString("Mensagens.punishKick").replaceAll("&", "§").replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]).replace("@time", timePunish));
                             }
@@ -102,7 +103,6 @@ public class PunishCommand implements CommandExecutor {
                     }
                 }
             }
-        }
         return true;
     }
 

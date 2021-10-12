@@ -1,6 +1,8 @@
 package com.queendev.punishplugin;
 
 import com.queendev.punishplugin.commands.PunishCommand;
+import com.queendev.punishplugin.commands.UnPunishCommand;
+import com.queendev.punishplugin.listeners.OnJoin;
 import com.queendev.punishplugin.managers.ConfigManager;
 import com.queendev.punishplugin.managers.PunishManager;
 import com.queendev.punishplugin.managers.ReasonManager;
@@ -10,6 +12,7 @@ import com.queendev.punishplugin.repository.Database;
 import com.queendev.punishplugin.repository.providers.MySQL;
 import com.queendev.punishplugin.repository.providers.SQLite;
 import lombok.Getter;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 @Getter
@@ -47,7 +50,8 @@ public class Punish extends JavaPlugin {
         ReasonsProcess.loadReasons();
 
         getCommand("punir").setExecutor(new PunishCommand());
-        //Bukkit.getPluginManager().registerEvents(new OnJoin(), this);
+        getCommand("unpunish").setExecutor(new UnPunishCommand());
+        Bukkit.getPluginManager().registerEvents(new OnJoin(), this);
         getLogger().info("Plugin habilitado com sucesso.");
     }
 
