@@ -1,0 +1,8 @@
+name: PunishPlugin
+version: 1.0
+author: queenDEV_
+main: com.queendev.punishplugin.Punish
+commands:
+  punir:
+  checkpunish:
+  unpunish:

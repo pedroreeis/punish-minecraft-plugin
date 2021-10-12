@@ -1,0 +1,20 @@
+Mensagens:
+  noPermission: "&c Você precisa do grupo Ajudante ou superior para executar este comando!"
+  punishNoProva: "&c Você precisa de uma prova válida para prosseguir com a punição."
+  punishProvaInvalid: "&c Sua prova não é válida, ela precisa começar com https:// e/ou não pode conter espaços."
+  punishReasonSelect: "&eSelecione uma infração para punir o jogador @player:"
+  punishPermaBroadcast:
+    - ""
+    - "&c* @player foi punido."
+    - "&c* Motivo: @reason - Tempo: @time"
+    - "&c* Autor: @autor - Prova: @prova"
+    - ""
+  unPunishBroadcast:
+    - ""
+    - "&e* @player teve sua punição revogada."
+    - "&e* Motivo: @reason"
+    - "&e* Autor: @autor"
+    - ""
+  punishSucess: "&ePunição aplicada com sucesso."
+  unPunishSucess: "&ePunição revogada com sucesso."
+  punishKick: "&c&lVOCÊ FOI PUNIDO!\n\n&fAutor: @autor\n&fProva: @prova\n&fMotivo: @reason\n&fTempo: @time\n \n&eAchou injusto ? Abra uma revisão em suarede.com/forum/revisão."
