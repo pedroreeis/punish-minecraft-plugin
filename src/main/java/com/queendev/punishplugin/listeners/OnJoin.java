@@ -15,12 +15,12 @@ public class OnJoin implements Listener {
     void onJoin(PlayerJoinEvent e) {
         Player p = e.getPlayer();
         PunishManager punishManager = Punish.getPlugin().getPunishManager();
-        ConfigManager messageConfig = Punish.getPlugin().getMessagesConfig();
         PunishModel punish = punishManager.getPunish(p.getName().toLowerCase());
-        String timePunish = punish.getTime() == 0 ? "§cPERMANENTE" : punish.getTime() + " HORA(S)";
-        String reasonPunish = Punish.getPlugin().getReasonManager().getReason(punish.getReason()).getLabel();
 
         if(punish != null) {
+            ConfigManager messageConfig = Punish.getPlugin().getMessagesConfig();
+            String timePunish = punish.getTime() == 0 ? "§cPERMANENTE" : punish.getTime() + " HORA(S)";
+            String reasonPunish = Punish.getPlugin().getReasonManager().getReason(punish.getReason()).getLabel();
             p.kickPlayer(messageConfig.getString("Mensagens.punishKick").replaceAll("&", "§").replace("@player", p.getName()).replace("@reason", reasonPunish).replace("@autor", punish.getAuthor()).replace("@prova", punish.getProva()).replace("@time", timePunish));
         }
     }

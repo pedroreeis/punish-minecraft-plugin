@@ -1,7 +1,7 @@
-package com.queendev.punishplugin.repository.providers;
+package com.queendev.punishplugin.database.providers;
 
 import com.queendev.punishplugin.Punish;
-import com.queendev.punishplugin.repository.Database;
+import com.queendev.punishplugin.database.Database;
 import org.bukkit.Bukkit;
 
 import java.sql.*;

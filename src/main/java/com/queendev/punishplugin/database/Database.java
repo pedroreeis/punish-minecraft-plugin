@@ -1,4 +1,4 @@
-package com.queendev.punishplugin.repository;
+package com.queendev.punishplugin.database;
 
 import java.sql.Connection;
 

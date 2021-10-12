@@ -3,8 +3,7 @@ package com.queendev.punishplugin.process;
 import com.queendev.punishplugin.Punish;
 import com.queendev.punishplugin.managers.PunishManager;
 import com.queendev.punishplugin.models.PunishModel;
-import com.queendev.punishplugin.repository.Database;
-import org.bukkit.Bukkit;
+import com.queendev.punishplugin.database.Database;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

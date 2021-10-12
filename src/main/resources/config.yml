@@ -5,46 +5,23 @@ MySQL:
   host: localhost:3306
   database: test
 
-permissionUse: "punir.usar" # Permissao para utilizar o comando /punir
+permissionUse: "punir.usar" # Permissao para utilizar os comandos
 
 CheckPunishMenu:
-  name: '&ePunições de: @player'
-  slots: 45
-  next_page_slot: 45
-  previous_page_slot: 37
-  next_page_item:
-    material: ARROW
-    data: 0
-    name: '&aPróxima página'
-    lore:
-      - ' '
-      - ' &7Clique esquerdo/direito para ir para a próxima página.'
-  previous_page_item:
-    material: ARROW
-    data: 0
-    name: '&aPágina anterior'
-    lore:
-      - ' '
-      - ' &7Clique esquerdo/direito para ir para a página anterior.'
   nothing_item:
-    material: WEB
-    data: 0
     name: '&cEstá vázio por aqui...'
     lore:
       - ' '
       - ' &7Esperando por punições? &fTente voltar mais tarde.'
-    slot: 13
   punish_item:
-    material: PAPER
-    data: 0
     lore:
-      - "&eNome: &7@player"
+      - "&7Nome: &f@player"
       - ""
-      - "&eInformações da punição:"
-      - " &eMotivo: @reason"
-      - " &eTipo: @type"
-      - " &eStatus: @status"
-      - " &eProva: @prova"
+      - "&fInformações da punição:"
+      - " &eMotivo: &7@reason"
+      - " &eAutor: &7@author"
+      - " &eProva: &7@prova"
+      - " &eTempo: &7@time"
       - ""
-      - "&eClique com o botão esquerdo para copiar a prova."
+      - "&7Clique com o botão esquerdo para copiar a prova."
       - "&cClique com o botão direito para revogar a punição."

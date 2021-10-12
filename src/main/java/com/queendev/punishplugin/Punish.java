@@ -1,16 +1,18 @@
 package com.queendev.punishplugin;
 
+import com.queendev.punishplugin.commands.CheckPunishCommand;
 import com.queendev.punishplugin.commands.PunishCommand;
 import com.queendev.punishplugin.commands.UnPunishCommand;
+import com.queendev.punishplugin.listeners.InventoryListener;
 import com.queendev.punishplugin.listeners.OnJoin;
 import com.queendev.punishplugin.managers.ConfigManager;
 import com.queendev.punishplugin.managers.PunishManager;
 import com.queendev.punishplugin.managers.ReasonManager;
 import com.queendev.punishplugin.process.PunishProcess;
 import com.queendev.punishplugin.process.ReasonsProcess;
-import com.queendev.punishplugin.repository.Database;
-import com.queendev.punishplugin.repository.providers.MySQL;
-import com.queendev.punishplugin.repository.providers.SQLite;
+import com.queendev.punishplugin.database.Database;
+import com.queendev.punishplugin.database.providers.MySQL;
+import com.queendev.punishplugin.database.providers.SQLite;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -51,7 +53,11 @@ public class Punish extends JavaPlugin {
 
         getCommand("punir").setExecutor(new PunishCommand());
         getCommand("unpunish").setExecutor(new UnPunishCommand());
+        getCommand("checkpunish").setExecutor(new CheckPunishCommand());
+
         Bukkit.getPluginManager().registerEvents(new OnJoin(), this);
+        Bukkit.getPluginManager().registerEvents(new InventoryListener(), this);
+
         getLogger().info("Plugin habilitado com sucesso.");
     }
 
