@@ -5,6 +5,10 @@ MySQL:
   host: localhost:3306
   database: test
 
+Webhook: # A formatação da webhook já é configurada, apenas coloque aqui as predefinições.
+  ativar: false
+  url: '' # Url da sua webhook
+
 permissionUse: "punir.usar" # Permissao para utilizar os comandos
 
 CheckPunishMenu:

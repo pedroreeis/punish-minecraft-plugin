@@ -5,7 +5,9 @@ import com.queendev.punishplugin.managers.ConfigManager;
 import com.queendev.punishplugin.managers.PunishManager;
 import com.queendev.punishplugin.models.ReasonModel;
 import com.queendev.punishplugin.utils.ChatObject;
+import com.queendev.punishplugin.utils.DiscordWebhook;
 import com.queendev.punishplugin.utils.MessageHelper;
+import lombok.SneakyThrows;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -16,11 +18,13 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class PunishCommand implements CommandExecutor {
+    @SneakyThrows
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
             if(!(sender instanceof Player)) {
@@ -89,6 +93,26 @@ public class PunishCommand implements CommandExecutor {
                             for(String line : MessageHelper.msgList("punishPermaBroadcast")) {
                                 String messageLine = line.replace("@player", args[0]).replace("@reason", reason.getLabel()).replace("@autor", p.getName()).replace("@prova", args[1]).replace("@time", timePunish);
                                 Bukkit.broadcastMessage(messageLine);
+                            }
+                            if(config.getBoolean("Webhook.ativar") == true) {
+                                if(config.getString("Webhook.url") != null) {
+                                    DiscordWebhook punishWebhook = new DiscordWebhook(config.getString("Webhook.url"));
+                                    punishWebhook.addEmbed(new DiscordWebhook.EmbedObject()
+                                            .setTitle("Punição - " + args[0])
+                                            .setDescription("Nova punição foi aplicada!")
+                                            .setColor(Color.RED)
+                                            .setThumbnail("https://mc-heads.net/avatar/" + args[0])
+                                            .addField("Motivo:", reason.getLabel(), true)
+                                            .addField("Autor:", p.getName(), false)
+                                            .addField("Infrator:", args[0], false)
+                                            .addField("Prova:", args[1], true)
+                                            .addField("Tempo (Em horas):", reason.getTime().toString(), true)
+                                            .setFooter("Punição aplicada com sucesso.", "https://mc-heads.net/avatar/" + args[0])
+                                    );
+                                    punishWebhook.execute();
+                                }else {
+                                    Bukkit.getConsoleSender().sendMessage("§cA opção 'Webhook' está ativada, mas a url está vazia, arrume!");
+                                }
                             }
                             p.sendMessage(messageConfig.getString("Mensagens.punishSucess").replaceAll("&", "§"));
 
