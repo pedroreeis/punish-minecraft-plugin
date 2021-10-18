@@ -10,3 +10,4 @@ https://imgur.com/UOCbNwq
 https://imgur.com/QCabg96
 https://imgur.com/AsOBEoI
 https://imgur.com/XsG2Gvi
+https://media.discordapp.net/attachments/626854662712197130/899651563474288670/unknown.png
