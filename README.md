@@ -9,4 +9,4 @@ O plugin tem: Menu GUI, SQLite ou MySQL, Motivos Configuraveis, Chat clicavel, e
 <img alt="1" src="https://i.imgur.com/UOCbNwq.png" />
 <img alt="1" src="https://i.imgur.com/QCabg96.png" />
 <img alt="1" src="https://i.imgur.com/AsOBEoI.png" />
-<img alt="1" src="https://media.discordapp.net/attachments/626854662712197130/899651563474288670/unknown.png" />
+<img alt="1" src="https://i.imgur.com/9pEbwTP.png" />
