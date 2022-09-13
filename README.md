@@ -2,7 +2,7 @@
 
 O plugin tem: Menu GUI, SQLite ou MySQL, Motivos Configuraveis, Chat clicavel, entre outros, prints abaixo:
 
-<img alt="1" src="https://i.imgur.com/FLU6XkX.png" />
+<img alt="1" src="https://imgur.com/ahLSGK1" />
 https://imgur.com/ahLSGK1
 https://imgur.com/jkbQEQK
 https://imgur.com/0L5i8VR
