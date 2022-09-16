@@ -10,3 +10,5 @@ O plugin tem: Menu GUI, SQLite ou MySQL, Motivos Configuraveis, Chat clicavel, e
 <img alt="1" src="https://i.imgur.com/QCabg96.png" />
 <img alt="1" src="https://i.imgur.com/AsOBEoI.png" />
 <img alt="1" src="https://i.imgur.com/9pEbwTP.png" />
+
+(a)[https://github.com/queendeveloperbr/punish-minecraft-plugin/blob/master/src/main/resources/reason.yml]
